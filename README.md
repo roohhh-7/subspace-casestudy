@@ -48,9 +48,13 @@ To understand the core friction points within Subspace, we must look at how the 
 
 ### 4.1 The Single-User Flow: Purchasing a Gift Card
 Live testing reveals that Subspace's single-user digital rails are highly optimized and execute cleanly.
+<img width="567" height="106" alt="image" src="https://github.com/user-attachments/assets/0898652f-5ed7-434a-a230-57bb7c9fea44" />
+
 
 ### 4.2 The Multi-User Flow: Joining a Shared Subscription Group
 When a co-subscriber attempts to join a shared group (e.g., a YouTube Premium Family plan), the journey shifts from an automated utility into a manual coordination loop.
+<img width="564" height="164" alt="image" src="https://github.com/user-attachments/assets/e7244697-79db-4915-a5b3-8469b075128a" />
+
 
 *Methodology Note on Multi-User Workflows: While single-user voucher delivery was verified firsthand via live checkout, the end-to-end multi-user subscription-sharing journey was mapped by analyzing official Subspace feature blogs.*
 
@@ -99,7 +103,7 @@ When a co-subscriber attempts to join a shared group (e.g., a YouTube Premium Fa
 
 ### Feedback 01: Onboarding Trust Deficit (GTM & ICPs)
 *   **Observed:** Live onboarding testing across web and mobile reveals major branding misalignments. When requesting an OTP via SMS, the message is signed by a third-party header (-SYNCHROVOX AI PRIVATE LIMITED). If attempting a WhatsApp login on the web app, the message flow hits a dead-end with zero OTP delivery, operating under an unverified personal profile named "~Mritunjoy Das Bot" using a standard mobile number. Furthermore, the developer support email listed publicly on the Google Play Store uses a personal address (`cubetechnologyindia at gmail . com`).
-*   <img width="1362" height="404" alt="image" src="https://github.com/user-attachments/assets/7db9ad03-b74b-48bc-9771-5dc3feca85a2" />
+ <img width="1362" height="404" alt="image" src="https://github.com/user-attachments/assets/7db9ad03-b74b-48bc-9771-5dc3feca85a2" />
 
 *   **Problem:** This creates a huge drop-off point at Step 0 of the user onboarding funnel. For a consumer fintech platform managing group finances, receiving security codes from an unrecognized entity ("Synchrovox AI") alongside an unverified personal WhatsApp profile completely breaks institutional trust. It triggers immediate fraud suspicions, causes user churn before ecosystem entry and might drive public scam accusations on forums.
 *   **Ship Instead:**
@@ -109,7 +113,7 @@ When a co-subscriber attempts to join a shared group (e.g., a YouTube Premium Fa
 
 ### Feedback 02: Building for iOS Users (UX, Growth & Strategy)
 *   **Observed:** During my first-hand cross-platform analysis of the live apps, I discovered that the iOS application completely lacks Subspace's primary business moat, the peer-to-peer subscription-sharing marketplace. While testing the iPhone build, I found its functions was limited to discounted brand gift cards only. There was no subscription management and any indication of “Subspace minutes” as well, it only had a static "Suggest a Subscription!" feedback input box.
-*   <img width="722" height="252" alt="image" src="https://github.com/user-attachments/assets/886b9591-95d1-4360-800b-b448ffa077a0" />
+ <img width="722" height="252" alt="image" src="https://github.com/user-attachments/assets/886b9591-95d1-4360-800b-b448ffa077a0" />
 <img width="463" height="480" alt="image" src="https://github.com/user-attachments/assets/1421d1fb-5ab2-4788-980e-b96b86b5772f" />
 
 *   **Problem:** Leaving subscription sharing off iOS cuts Subspace completely out of India's highest Average Revenue Per User (ARPU) demographic which has the people most likely to pay for premium plans like Netflix 4K or YouTube Premium. It also completely breaks the network effect. If an Android host wants to share a plan with their friends, but half those friends use an iPhone, they can't do it through the app. The group falls apart, and they just go back to splitting bills manually on WhatsApp.
@@ -120,7 +124,7 @@ When a co-subscriber attempts to join a shared group (e.g., a YouTube Premium Fa
 
 ### Feedback 03: The Manual OTP Friction (UX & Services)
 *   **Observed:** Looking closely at user complaints on Reddit and the Play Store, the biggest operational bottleneck happens right after payment when users face a "device not part of household" lockout. Currently, the automation completely halts; the co-subscriber has to hop into an in-app chat box, message the group host, and wait hours for them to manually forward a verification link or a 4-digit OTP code.
-*   <img width="669" height="426" alt="image" src="https://github.com/user-attachments/assets/1d62088d-cdef-40ff-a15d-469c93272907" />
+   <img width="669" height="426" alt="image" src="https://github.com/user-attachments/assets/1d62088d-cdef-40ff-a15d-469c93272907" />
 
 *   **Problem:** This manual dependency completely destroys user retention and creates an unmanageable customer support burden. Users buying a slot expect instant access. When high host unresponsiveness leaves them locked out of a service they just paid for, they immediately cancel, file payment disputes, and leave highly damaging reviews online.
 *   **Ship Instead:** Completely remove the human bottleneck by implementing an automated, server-side Email-Parsing Interception Gateway modeled after global builders like GamsGo:
