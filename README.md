@@ -53,6 +53,7 @@ Live testing reveals that Subspace's single-user digital rails are highly optimi
 
 ### 4.2 The Multi-User Flow: Joining a Shared Subscription Group
 When a co-subscriber attempts to join a shared group (e.g., a YouTube Premium Family plan), the journey shifts from an automated utility into a manual coordination loop.
+
 <img width="564" height="164" alt="image" src="https://github.com/user-attachments/assets/e7244697-79db-4915-a5b3-8469b075128a" />
 
 
