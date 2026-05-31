@@ -99,6 +99,8 @@ When a co-subscriber attempts to join a shared group (e.g., a YouTube Premium Fa
 
 ### Feedback 01: Onboarding Trust Deficit (GTM & ICPs)
 *   **Observed:** Live onboarding testing across web and mobile reveals major branding misalignments. When requesting an OTP via SMS, the message is signed by a third-party header (-SYNCHROVOX AI PRIVATE LIMITED). If attempting a WhatsApp login on the web app, the message flow hits a dead-end with zero OTP delivery, operating under an unverified personal profile named "~Mritunjoy Das Bot" using a standard mobile number. Furthermore, the developer support email listed publicly on the Google Play Store uses a personal address (`cubetechnologyindia at gmail . com`).
+*   <img width="1362" height="404" alt="image" src="https://github.com/user-attachments/assets/7db9ad03-b74b-48bc-9771-5dc3feca85a2" />
+
 *   **Problem:** This creates a huge drop-off point at Step 0 of the user onboarding funnel. For a consumer fintech platform managing group finances, receiving security codes from an unrecognized entity ("Synchrovox AI") alongside an unverified personal WhatsApp profile completely breaks institutional trust. It triggers immediate fraud suspicions, causes user churn before ecosystem entry and might drive public scam accusations on forums.
 *   **Ship Instead:**
     *   **Unify the Brand Interface:** Establish an official, verified Telecommunication DLT registration in India to secure a dedicated, recognizable brand SMS header (e.g., SUBSPC or SBSPCE).
@@ -107,6 +109,9 @@ When a co-subscriber attempts to join a shared group (e.g., a YouTube Premium Fa
 
 ### Feedback 02: Building for iOS Users (UX, Growth & Strategy)
 *   **Observed:** During my first-hand cross-platform analysis of the live apps, I discovered that the iOS application completely lacks Subspace's primary business moat, the peer-to-peer subscription-sharing marketplace. While testing the iPhone build, I found its functions was limited to discounted brand gift cards only. There was no subscription management and any indication of “Subspace minutes” as well, it only had a static "Suggest a Subscription!" feedback input box.
+*   <img width="722" height="252" alt="image" src="https://github.com/user-attachments/assets/886b9591-95d1-4360-800b-b448ffa077a0" />
+<img width="463" height="480" alt="image" src="https://github.com/user-attachments/assets/1421d1fb-5ab2-4788-980e-b96b86b5772f" />
+
 *   **Problem:** Leaving subscription sharing off iOS cuts Subspace completely out of India's highest Average Revenue Per User (ARPU) demographic which has the people most likely to pay for premium plans like Netflix 4K or YouTube Premium. It also completely breaks the network effect. If an Android host wants to share a plan with their friends, but half those friends use an iPhone, they can't do it through the app. The group falls apart, and they just go back to splitting bills manually on WhatsApp.
 *   **Ship Instead:** The reason they haven't launched this on iOS is likely Apple's strict Guideline 3.1.1, which bans public credential reselling and slaps a 30% tax on digital sales. To get around this, Subspace shouldn't clone the Android store on iOS. Instead, they should build a compliant, private Expense Ledger modelled after global players like Spliiit:
     1.  **Private group:** An iOS host sets up a private billing group and invites their friends directly via text or email, keeping it out of a public storefront.
@@ -115,6 +120,8 @@ When a co-subscriber attempts to join a shared group (e.g., a YouTube Premium Fa
 
 ### Feedback 03: The Manual OTP Friction (UX & Services)
 *   **Observed:** Looking closely at user complaints on Reddit and the Play Store, the biggest operational bottleneck happens right after payment when users face a "device not part of household" lockout. Currently, the automation completely halts; the co-subscriber has to hop into an in-app chat box, message the group host, and wait hours for them to manually forward a verification link or a 4-digit OTP code.
+*   <img width="669" height="426" alt="image" src="https://github.com/user-attachments/assets/1d62088d-cdef-40ff-a15d-469c93272907" />
+
 *   **Problem:** This manual dependency completely destroys user retention and creates an unmanageable customer support burden. Users buying a slot expect instant access. When high host unresponsiveness leaves them locked out of a service they just paid for, they immediately cancel, file payment disputes, and leave highly damaging reviews online.
 *   **Ship Instead:** Completely remove the human bottleneck by implementing an automated, server-side Email-Parsing Interception Gateway modeled after global builders like GamsGo:
     1.  **Dedicated Forwarding Aliases:** When a host lists a static-credential group, require the master account to be registered under a platform-provided forwarding email alias (e.g., `group_1092@subspace.money`).
@@ -122,6 +129,8 @@ When a co-subscriber attempts to join a shared group (e.g., a YouTube Premium Fa
 
 ### Feedback 04: Legal & Geofencing Vulnerabilities (Collaboration & Compliance)
 *   **Observed:** Subspace's original subscription-sharing model relies heavily on hosts sharing account credentials with buyers. While this may work for some services, it creates significant issues on platforms like Netflix. In regions such as Europe, platforms like Spliiit can facilitate Netflix sharing through Netflix's official "Extra Member" feature, allowing users to join accounts without exchanging passwords. However, Netflix has removed the Extra Member option in India, encouraging users to purchase individual plans instead of shared access.
+*   <img width="928" height="213" alt="image" src="https://github.com/user-attachments/assets/cb3e1f7b-f684-405e-84f5-cffa09a57b34" />
+
 *   **Problem:** Netflix actively enforces household restrictions using Wi-Fi networks, IP addresses, and device recognition. Users accessing an account from outside the designated household are frequently asked to verify access through one-time codes sent to the account owner. This creates a poor user experience, as buyers must repeatedly contact hosts for access codes or account assistance. The result is recurring logouts, increased refund requests, higher customer support costs, and reduced trust in the platform.
 *   **Ship Instead:** Reduce dependence on high-risk password-sharing models and build the platform around more scalable and compliant access mechanisms.  
     **Architecture:**
